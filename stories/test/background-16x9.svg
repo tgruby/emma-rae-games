@@ -1,0 +1,31 @@
+<!-- SVG format draw a brick wall -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1812" height="1024">
+    <rect x="0" y="0" width="1812" height="1024" style="stroke:black;fill:white;" />
+    <line x1="0" y1="0" x2="1812" y2="1024" stroke="black" />
+    <line x1="1812" y1="0" x2="0" y2="1024" stroke="black" />
+    <line x1="0" y1="512" x2="1812" y2="512" stroke="black" />
+
+    <line x1="512" y1="290" x2="512" y2="736" stroke="black" />
+    <!-- <line x1="0" y1="0" x2="1024" y2="1024" stroke="black" /> -->
+
+    <line x1="654" y1="370" x2="654" y2="656" stroke="black" />
+    <!-- <line x1="512" y1="290" x2="986" y2="1024" stroke="black" /> -->
+
+    <line x1="722" y1="408" x2="722" y2="618" stroke="black" />
+    <!-- <line x1="654" y1="370" x2="974" y2="1024" stroke="black" /> -->
+
+    <line x1="763" y1="430" x2="763" y2="594" stroke="black" />
+
+    <rect x="763" y="430" width="286" height="164" style="stroke:black;fill:white;" />
+    
+    <line x1="1300" y1="290" x2="1300" y2="736" stroke="black" />
+    <!-- <line x1="1812" y1="0" x2="788" y2="1024" stroke="black" /> -->
+
+    <line x1="1158" y1="370" x2="1158" y2="656" stroke="black" />
+    <!-- <line x1="1300" y1="290" x2="832" y2="1024" stroke="black" /> -->
+
+    <line x1="1090" y1="408" x2="1090" y2="618" stroke="black" />
+    <!-- <line x1="1158" y1="370" x2="838" y2="1024" stroke="black" /> -->
+
+    <line x1="1049" y1="430" x2="1049" y2="594" stroke="black" /> 
+</svg>

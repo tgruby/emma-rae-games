@@ -1,0 +1,73 @@
+{
+    "title": "Jeremy and the Jeremy Bugs",
+    "description": "A simple companion game to the book of Jeremy and the Jermey Bugs.",
+    "coverArt": "cover-art.png",
+    "author": "Emma Rae",
+    "backgroundImage": "background.png",
+    "startingPosition": [1, 1],
+    "startingDirection": "south",
+    "moveSound": "hop.mp3",
+    "moveBlockedSound": "pop.mp3",
+    "moveBlockedMessage": "blocked.png",
+    "interactSound": "slurp.mp3",
+    "interactImage": "tongue.png",
+    "gameMaps": [[
+        "###########################",
+        "### 1 ### j     b       ###",
+        "###   ###   ######### j ###",
+        "###   ###   ###         ###",
+        "### j ### j ###   #########",
+        "###         ### b ### j ###",
+        "######   ######   ###   ###",
+        "###    j ### j    ###   ###",
+        "###   #########   ###   ###",
+        "### j     b           j ###",
+        "###########################"
+    ],
+    [
+        "###########################",
+        "###       j ### b       ###",
+        "#########   ###   ### j ###",
+        "### j ###   ###         ###",
+        "### b ### j ###   #########",
+        "###             b ### j ###",
+        "######   ######   ###   ###",
+        "###    j     j    ###   ###",
+        "###   #########   ###   ###",
+        "### j     b           j ###",
+        "###########################"
+    ]],
+    "gameItems": {
+        "###": {
+            "type": "obstacle",
+            "name": "cattails",
+            "image": "cattails.png",
+            "sound": null,
+            "opaque": true
+        },
+        " j ": {
+            "type": "item",
+            "name": "jeremy bug",
+            "image": "jeremy-bug.png",
+            "healthInteractImpact": 5,
+            "hungerInteractImpact": 10,
+            "interactSound": "slurp.mp3",
+            "opaque": true
+        },
+        " b ": {
+            "type": "creature",
+            "name": "bee",
+            "image": "bee.png",
+            "healthInteractImpact": -15,
+            "hungerInteractImpact": 0,
+            "interactSound": "ouch.mp3",
+            "opaque": true
+        },
+        " 1 ": {
+            "type": "waypoint",
+            "title": "Jeremy's Hungry!",
+            "html": "Help Jeremy find tasty Jeremy Bugs to eat!  When close to a bug, press 'e' to eat them.  Happy Hunting!",
+            "showOnce": true
+        }
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "title": "Test File",
+    "description": "Game for Software Testing Purposes.",
+    "coverArt": "cover-art.png",
+    "author": "Trevor Gruby",
+    "published": true,
+    "backgroundImage": "background.svg",
+    "startingPosition": [1, 1],
+    "startingDirection": "south",
+    "moveSound": "walking.mp3",
+    "moveBlockedSound": "thump.mp3",
+    "moveBlockedMessage": "blocked-movement.png",
+    "interactSound": "pickup_item.mp3",
+    "interactImage": "interact.png",
+    "attackSound": "slurp.mp3",
+    "attackImage": "interact.png",
+    "gameMap": [
+        "###########################",
+        "###   ###               ###",
+        "### 1 ###   #########   ###",
+        "###   ###   ###         ###",
+        "### 2 ###   ###   #########",
+        "###         ###   ###   ###",
+        "######   ######   ###   ###",
+        "###      ###      ###   ###",
+        "###   #########   ###   ###",
+        "###         ###         ###",
+        "###########################"
+    ],
+    "gameItems": {
+        "###": {
+            "type": "obstacle",
+            "name": "wall",
+            "image": "brick-wall.svg",
+            "sound": null,
+            "opaque": true
+        },
+        " 1 ": {
+            "type": "waypoint",
+            "title": "Welcome Adventurer!",
+            "html": "Welcome to Hand-Drawn Dungeons!  This game is a tutorial on how to play stories.  You move around the maze using the <strong>'w', 'a',</strong> and <strong>'d'</strong> keys.",
+            "showOnce": false
+        },
+        " 2 ": {
+            "type": "waypoint",
+            "title": "Picking Up Items",
+            "html": "You can pick up items by pressing the <strong>'e'</strong> key. Try picking up the rock in front of you.",
+            "showOnce": true
+        },
+        " r ": {
+            "type": "item",
+            "name": "roots",
+            "image": "roots.png",
+            "opaque": true
+        },
+        " s ": {
+            "type": "item",
+            "name": "stone",
+            "image": "stone.png",
+            "opaque": true
+        },
+        " - ": {
+            "type": "item",
+            "name": "stick",
+            "image": "stick.png",
+            "opaque": true
+        },
+        " z ": {
+            "type": "item",
+            "name": "spear",
+            "image": "spear.png",
+            "opaque": true
+        }
+    }
+    
+
+}
