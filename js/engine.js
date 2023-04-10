@@ -26,7 +26,9 @@ class Engine {
 
     constructor(datafile, storyURL) { 
         this.player = {
-            inventory: new Array()
+            inventory: new Array(),
+            health: 75,
+            hunger: 25
         };
         this.map = this.parseMap(datafile.gameMaps, 0);
 
@@ -71,6 +73,8 @@ class Engine {
             let sound = new Audio(this.storyURL + this.story.moveSound);
             if (nearbyObject !== undefined && nearbyObject.sound !== undefined) sound = new Audio(this.storyURL + nearbyObject.sound);
             sound.play();
+            this.updateHealth(this.story.moveHealthImpact);
+            this.updateHunger(this.story.moveHungerImpact);
         } else {
             let sound = new Audio(this.storyURL + this.story.moveBlockedSound);
             sound.play();
@@ -78,6 +82,25 @@ class Engine {
         }
 
         this.drawPerspective();
+    }
+
+    updateHealth(impact) {
+        this.player.health = this.player.health + impact;
+        if (this.player.health > 100) this.player.health = 100;
+        if (this.player.health < 0) this.player.health = 0;
+        $('#health').css('width', this.player.health + '%');
+    }
+
+    updateHunger(impact) {
+        this.player.hunger = this.player.hunger + impact;
+        if (this.player.hunger > 100) this.player.hunger = 100;
+        if (this.player.hunger < 0) this.player.hunger = 0;
+        $('#hunger').css('width', this.player.hunger + '%');
+
+        // if the player is starving, they lose health
+        if (this.player.hunger < 10) {  
+            this.updateHealth(-2);
+        }
     }
 
     nextPosition() {
@@ -118,6 +141,8 @@ class Engine {
             // Put the object in the player's inventory
             this.player.inventory.push(nearbyObject);
             this.map[this.y][this.x] = "   ";
+            if (nearbyObject.healthInteractImpact) this.updateHealth(nearbyObject.healthInteractImpact);
+            if (nearbyObject.hungerInteractImpact) this.updateHunger(nearbyObject.hungerInteractImpact);
         }
         this.drawPerspective();
     }

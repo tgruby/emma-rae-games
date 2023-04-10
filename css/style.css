@@ -35,7 +35,6 @@ img#background {
   z-index: 0;
 }
 
-
 img#interact_image {
   position: absolute;
   bottom: 42px;
@@ -46,7 +45,7 @@ img#interact_image {
   z-index: 101;
 }
 
-img#waypoint_panel{  
+img#waypoint_panel {  
   position: relative;
   margin: auto;
   width: 256px;
@@ -55,4 +54,24 @@ img#waypoint_panel{
   text-align: center;
   z-index: 21;
   visibility: hidden;
+}
+
+div#health_bar {
+  border: 2px solid black; 
+  height: 42px; 
+  z-index: 90; 
+  position: absolute; 
+  width: 400px; 
+  left: 50px; 
+  top: 50px;
+}
+
+div#hunger_bar {
+  border: 2px solid black; 
+  height: 42px;  
+  z-index: 90; 
+  position: absolute; 
+  width: 400px; 
+  left: 512px; 
+  top: 50px;
 }
