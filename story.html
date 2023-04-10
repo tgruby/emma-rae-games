@@ -52,10 +52,8 @@
               engine.turnLeft();
             } else if (e.key === "d") {
               engine.turnRight();
-            } else if (e.key === "e") {
-              engine.interact();
             } else if (e.key === " ") {
-              engine.hideWaypoint();
+              engine.interact();
             } else if (e.key === "Enter") {
               engine.hideWaypoint();
             } else {
@@ -63,6 +61,11 @@
             }
           });
         });
+
+        // Disable the space bar from scrolling the page.
+        window.onkeydown = function(e) {
+            return e.keyCode !== 32;
+        };
     </script>
 
     <!-- Modal -->
@@ -76,7 +79,7 @@
             ...
           </div>
           <div class="modal-footer font-italic">
-            Press 'Space' or 'Return' to close this dialog window.
+            Press 'Return' to close this dialog window.
           </div>
         </div>
       </div>

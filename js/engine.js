@@ -234,7 +234,7 @@ class Engine {
         imgPosition.src = image;
         setTimeout(function() {
             console.log("Flasing Image back to blank");
-            imgPosition.src = "/img/blank.svg";
+            imgPosition.src = "img/blank.svg";
         }, timing);
     }
 
