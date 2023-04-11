@@ -29,8 +29,8 @@
     "gameItems": {
         "###": {
             "type": "obstacle",
-            "name": "cattails",
-            "image": "cattails.png",
+            "name": "cat tails",
+            "image": "cat-tails.png",
             "sound": null,
             "opaque": true
         },
