@@ -41,16 +41,16 @@
             "healthInteractImpact": 5,
             "hungerInteractImpact": 10,
             "scoreInteractImpact": 10,
-            "interactSound": "slurp.mp3",
             "opaque": true
         },
         " b ": {
             "type": "creature",
             "name": "Bee",
             "image": "bee.png",
+            "sound": "ella-buzz.mp3",
             "healthInteractImpact": -15,
             "hungerInteractImpact": 0,
-            "interactSound": "ouch.mp3",
+            "interactSound": "mom-ahhh.mp3",
             "opaque": true
         },
         " 1 ": {

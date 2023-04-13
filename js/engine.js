@@ -141,9 +141,11 @@ class Engine {
     interact() {
         let nearbyObject = this.story.gameItems[this.map[this.y][this.x]];
         let interactSound = new Audio(this.storyURL + this.story.interactSound);
+        if (nearbyObject !== undefined && nearbyObject.interactSound !== undefined)
+            interactSound = new Audio(this.storyURL + nearbyObject.interactSound);
         interactSound.play();
         this.flashMessage(this.storyURL + this.story.interactImage, 250);
-        if (nearbyObject !== undefined && nearbyObject.type !== 'obstical') {
+        if (nearbyObject !== undefined && nearbyObject.type !== 'obstacle') {
             // Put the object in the player's inventory
             this.player.inventory.push(nearbyObject);
             this.map[this.y][this.x] = "   ";
