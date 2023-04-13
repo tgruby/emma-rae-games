@@ -14,19 +14,19 @@
     "interactImage": "interact.png",
     "attackSound": "slurp.mp3",
     "attackImage": "interact.png",
-    "gameMap": [
+    "gameMaps": [[
         "###########################",
-        "###   ###               ###",
+        "###   ###    -          ###",
         "### 1 ###   #########   ###",
         "###   ###   ###         ###",
         "### 2 ###   ###   #########",
-        "###         ###   ###   ###",
-        "######   ######   ###   ###",
-        "###      ###      ###   ###",
+        "### s       ###   ### z ###",
+        "###### r ######   ###   ###",
+        "### r  r ### s    ###   ###",
         "###   #########   ###   ###",
-        "###         ###         ###",
+        "###       - ###         ###",
         "###########################"
-    ],
+    ]],
     "gameItems": {
         "###": {
             "type": "obstacle",
@@ -38,13 +38,13 @@
         " 1 ": {
             "type": "waypoint",
             "title": "Welcome Adventurer!",
-            "html": "Welcome to Hand-Drawn Dungeons!  This game is a tutorial on how to play stories.  You move around the maze using the <strong>'w', 'a',</strong> and <strong>'d'</strong> keys.",
+            "html": "This game is a tutorial on how to play stories.  You move around the maze using the <strong>'w', 'a',</strong> and <strong>'d'</strong> keys.",
             "showOnce": false
         },
         " 2 ": {
             "type": "waypoint",
             "title": "Picking Up Items",
-            "html": "You can pick up items by pressing the <strong>'e'</strong> key. Try picking up the rock in front of you.",
+            "html": "You can pick up items by pressing the <strong>'Spacebar'</strong> key. Try picking up the rock in front of you.",
             "showOnce": true
         },
         " r ": {
