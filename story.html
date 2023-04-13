@@ -11,17 +11,21 @@
     <script type="text/javascript" src='js/engine.js'></script>
   </head>
   <body>
-    <h1 id='game_title' style="color: whitesmoke; text-align: center;"></h1>
-
     <div id="viewport">
       <img id="background" src="img/blank.svg"/>
       <img id="viewport_border" src="img/border.svg"/>
       <img id="interact_image" src="img/blank.svg"/>
+
+        <div id="score" class="score-container">
+          Score: 0
+        </div>
+
       <div id="health_bar" class="progress" role="progressbar" aria-label="Health" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-        <div id="health" class="progress-bar bg-success" style="width: 75%; font-size: 1.6em; color: black;">Health</div>
+        <div id="health" class="progress-bar bg-success" style="width: 75%;">Health</div>
       </div>
+
       <div id="hunger_bar" class="progress" role="progressbar" aria-label="Hunger" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-        <div id="hunger" class="progress-bar bg-info" style="width: 25%; font-size: 1.6em; color: black;">Hunger</div>
+        <div id="hunger" class="progress-bar bg-info" style="width: 75%;">Hunger</div>
       </div>  
     </div>
 
@@ -41,8 +45,6 @@
         })
         .then((data) => {
           // Now that we have the story datafile, we can bind the keypresses and start our story engine.
-          document.getElementById('game_title').innerHTML = data.title;
-
           let engine = new Engine(data, "stories/" + params.game + "/");
           document.addEventListener("keyup", (e) => {
             if (e.key === "w") {

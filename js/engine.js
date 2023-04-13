@@ -28,7 +28,8 @@ class Engine {
         this.player = {
             inventory: new Array(),
             health: 75,
-            hunger: 25
+            hunger: 25,
+            score: 0
         };
         this.map = this.parseMap(datafile.gameMaps, 0);
 
@@ -84,6 +85,11 @@ class Engine {
         this.drawPerspective();
     }
 
+    updateScore(impact) {
+        this.player.score = this.player.score + impact;
+        $('#score').text("Score: " + this.player.score);
+    }
+
     updateHealth(impact) {
         this.player.health = this.player.health + impact;
         if (this.player.health > 100) this.player.health = 100;
@@ -95,7 +101,7 @@ class Engine {
         this.player.hunger = this.player.hunger + impact;
         if (this.player.hunger > 100) this.player.hunger = 100;
         if (this.player.hunger < 0) this.player.hunger = 0;
-        $('#hunger').css('width', this.player.hunger + '%');
+        $('#hunger').css('width', (100 - this.player.hunger) + '%');
 
         // if the player is starving, they lose health
         if (this.player.hunger < 10) {  
@@ -143,6 +149,7 @@ class Engine {
             this.map[this.y][this.x] = "   ";
             if (nearbyObject.healthInteractImpact) this.updateHealth(nearbyObject.healthInteractImpact);
             if (nearbyObject.hungerInteractImpact) this.updateHunger(nearbyObject.hungerInteractImpact);
+            if (nearbyObject.scoreInteractImpact) this.updateScore(nearbyObject.scoreInteractImpact);
         }
         this.drawPerspective();
     }

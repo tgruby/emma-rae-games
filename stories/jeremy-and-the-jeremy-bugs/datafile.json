@@ -29,23 +29,24 @@
     "gameItems": {
         "###": {
             "type": "obstacle",
-            "name": "cat tails",
-            "image": "cat-tails.png",
+            "name": "Cattails",
+            "image": "cattails.png",
             "sound": null,
             "opaque": true
         },
         " j ": {
             "type": "item",
-            "name": "jeremy bug",
+            "name": "Jeremy Bug",
             "image": "jeremy-bug.png",
             "healthInteractImpact": 5,
             "hungerInteractImpact": 10,
+            "scoreInteractImpact": 10,
             "interactSound": "slurp.mp3",
             "opaque": true
         },
         " b ": {
             "type": "creature",
-            "name": "bee",
+            "name": "Bee",
             "image": "bee.png",
             "healthInteractImpact": -15,
             "hungerInteractImpact": 0,

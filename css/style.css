@@ -61,9 +61,11 @@ div#health_bar {
   height: 42px; 
   z-index: 90; 
   position: absolute; 
-  width: 400px; 
-  left: 50px; 
-  top: 50px;
+  width: 860px; 
+  left: 140px; 
+  top: 75px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 div#hunger_bar {
@@ -71,7 +73,27 @@ div#hunger_bar {
   height: 42px;  
   z-index: 90; 
   position: absolute; 
-  width: 400px; 
-  left: 512px; 
+  width: 860px; 
+  left: 140px; 
+  top: 125px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.score-container {
+  border: 2px solid black; 
+  z-index: 100; 
+  position: absolute; 
+  left: 20px; 
   top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
 }
