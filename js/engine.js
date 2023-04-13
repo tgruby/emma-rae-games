@@ -73,9 +73,15 @@ class Engine {
             this.y = nextPosition.y;
             let sound = new Audio(this.storyURL + this.story.moveSound);
             if (nearbyObject !== undefined && nearbyObject.sound !== undefined) sound = new Audio(this.storyURL + nearbyObject.sound);
-            sound.play();
+            if (nearbyObject !== undefined && nearbyObject.type == "goal") {
+                startConfetti();
+                setTimeout(function() {
+                    stopConfetti();
+                }, 4000);
+            }
             this.updateHealth(this.story.moveHealthImpact);
             this.updateHunger(this.story.moveHungerImpact);
+            sound.play();
         } else {
             let sound = new Audio(this.storyURL + this.story.moveBlockedSound);
             sound.play();
@@ -239,7 +245,7 @@ class Engine {
                         if (item.showOnce) {
                             this.map[this.y][this.x] = '   ';
                         }
-                    } else if (item.type == 'item' || item.type == 'creature' || item.type == 'obstacle') {
+                    } else if (item.type == 'item' || item.type == 'creature' || item.type == 'obstacle' || item.type == 'goal') {
                         let image = this.storyURL + item.image;
                         this.showImage(image, x, y);
                     } else {

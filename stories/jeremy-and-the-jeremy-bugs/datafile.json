@@ -19,7 +19,7 @@
         "###   ###   ######### j ###",
         "###   ###   ###         ###",
         "### j ### j ###   #########",
-        "###         ### b ### j ###",
+        "###         ### b ### g ###",
         "######   ######   ###   ###",
         "###    j ### j    ###   ###",
         "###   #########   ###   ###",
@@ -58,6 +58,13 @@
             "title": "Jeremy's Lost!",
             "html": "Jeremy is lost and hungry.  Help Jeremy find his way home and eat tasty jeremy bugs along the way!  Use 'w', 'a', and 'd' to move and when close to a bug, press 'space' to eat them!",
             "showOnce": true
+        },
+        " g ": {
+            "type": "goal",
+            "name": "Goal",
+            "image": "floating-diamond.png",
+            "animation": "startConfetti",
+            "opaque": true
         }
     }
 }

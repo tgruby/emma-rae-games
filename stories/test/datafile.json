@@ -4,7 +4,7 @@
     "coverArt": "cover-art.png",
     "author": "Trevor Gruby",
     "published": true,
-    "backgroundImage": "background.svg",
+    "backgroundImage": "background.png",
     "startingPosition": [1, 1],
     "startingDirection": "south",
     "moveSound": "walking.mp3",
@@ -15,23 +15,30 @@
     "attackSound": "slurp.mp3",
     "attackImage": "interact.png",
     "gameMaps": [[
-        "###########################",
-        "###   ###    -          ###",
-        "### 1 ###   #########   ###",
-        "###   ###   ###         ###",
-        "### 2 ###   ###   #########",
+        "###OOO######OOO###OOO###OOO",
+        "###   OOO    -          ###",
+        "OOO 1 ###   OOO###OOO   OOO",
+        "###   OOO   ###         ###",
+        "OOO 2 ###   OOO   OOO###OOO",
         "### s       ###   ### z ###",
-        "###### r ######   ###   ###",
-        "### r  r ### s    ###   ###",
-        "###   #########   ###   ###",
-        "###       - ###         ###",
-        "###########################"
+        "OOO###   OOO###   ###   OOO",
+        "###      ### s    OOO   ###",
+        "OOO   ###OOO###   ###   OOO",
+        "###         ###         ###",
+        "OOO###OOO###OOO###OOO###OOO"
     ]],
     "gameItems": {
         "###": {
             "type": "obstacle",
-            "name": "wall",
-            "image": "brick-wall.svg",
+            "name": "Tree",
+            "image": "tree.png",
+            "sound": null,
+            "opaque": true
+        },
+        "OOO": {
+            "type": "obstacle",
+            "name": "Rock",
+            "image": "rock.png",
             "sound": null,
             "opaque": true
         },
@@ -39,7 +46,7 @@
             "type": "waypoint",
             "title": "Welcome Adventurer!",
             "html": "This game is a tutorial on how to play stories.  You move around the maze using the <strong>'w', 'a',</strong> and <strong>'d'</strong> keys.",
-            "showOnce": false
+            "showOnce": true
         },
         " 2 ": {
             "type": "waypoint",
@@ -47,28 +54,17 @@
             "html": "You can pick up items by pressing the <strong>'Spacebar'</strong> key. Try picking up the rock in front of you.",
             "showOnce": true
         },
-        " r ": {
-            "type": "item",
-            "name": "roots",
-            "image": "roots.png",
-            "opaque": true
-        },
         " s ": {
             "type": "item",
             "name": "stone",
             "image": "stone.png",
             "opaque": true
         },
-        " - ": {
-            "type": "item",
-            "name": "stick",
-            "image": "stick.png",
-            "opaque": true
-        },
         " z ": {
-            "type": "item",
-            "name": "spear",
-            "image": "spear.png",
+            "type": "goal",
+            "name": "Diamond",
+            "image": "floating-diamond.png",
+            "sound": "level-complete.mp3",
             "opaque": true
         }
     }
