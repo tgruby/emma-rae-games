@@ -19,12 +19,12 @@
         "###   OOO    -          ###",
         "OOO 1 ###   OOO###OOO   OOO",
         "###   OOO   ###         ###",
-        "OOO 2 ###   OOO   OOO###OOO",
-        "### s       ###   ### z ###",
+        "OOO   ###   OOO   OOO###OOO",
+        "###         ###   ### z ###",
         "OOO###   OOO###   ###   OOO",
         "###      ### s    OOO   ###",
         "OOO   ###OOO###   ###   OOO",
-        "###         ###         ###",
+        "###          s          ###",
         "OOO###OOO###OOO###OOO###OOO"
     ]],
     "gameItems": {
@@ -37,9 +37,15 @@
         },
         "OOO": {
             "type": "obstacle",
-            "name": "Rock",
+            "name": "Rock Wall",
             "image": "rock.png",
             "sound": null,
+            "opaque": true
+        },
+        " o ": {
+            "type": "item",
+            "name": "Stone",
+            "image": "stone.png",
             "opaque": true
         },
         " 1 ": {
@@ -55,9 +61,9 @@
             "showOnce": true
         },
         " s ": {
-            "type": "item",
-            "name": "stone",
-            "image": "stone.png",
+            "type": "creature",
+            "name": "Snake",
+            "image": "snake.png",
             "opaque": true
         },
         " z ": {

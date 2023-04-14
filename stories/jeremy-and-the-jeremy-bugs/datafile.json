@@ -22,7 +22,7 @@
         "###         ### b ### g ###",
         "######   ######   ###   ###",
         "###    j ### j    ###   ###",
-        "###   #########   ###   ###",
+        "###   ######### s ###   ###",
         "### j     b           j ###",
         "###########################"
     ]],
@@ -53,6 +53,16 @@
             "interactSound": "mom-ahhh.mp3",
             "opaque": true
         },
+        " s ": {
+            "type": "creature",
+            "name": "Snake",
+            "image": "snake.png",
+            "sound": "mara-hsss.mp3",
+            "healthInteractImpact": -30,
+            "hungerInteractImpact": 0,
+            "interactSound": "mom-ahhh.mp3",
+            "opaque": true
+        },
         " 1 ": {
             "type": "waypoint",
             "title": "Jeremy's Lost!",
@@ -61,9 +71,9 @@
         },
         " g ": {
             "type": "goal",
-            "name": "Goal",
-            "image": "floating-diamond.png",
-            "animation": "startConfetti",
+            "name": "Home",
+            "image": "home.png",
+            "sound": "yay.mp3",
             "opaque": true
         }
     }
