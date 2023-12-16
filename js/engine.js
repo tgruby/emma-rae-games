@@ -29,7 +29,8 @@ class Engine {
             inventory: new Array(),
             health: 75,
             hunger: 25,
-            score: 0
+            score: 0,
+            stars: 0
         };
         this.map = this.parseMap(datafile.gameMaps, 0);
 
@@ -74,6 +75,7 @@ class Engine {
             let sound = new Audio(this.storyURL + this.story.moveSound);
             if (nearbyObject !== undefined && nearbyObject.sound !== undefined) sound = new Audio(this.storyURL + nearbyObject.sound);
             if (nearbyObject !== undefined && nearbyObject.type == "goal") {
+                this.updateScore(100);
                 startConfetti();
                 setTimeout(function() {
                     stopConfetti();
@@ -157,7 +159,8 @@ class Engine {
             this.map[this.y][this.x] = "   ";
             if (nearbyObject.healthInteractImpact) this.updateHealth(nearbyObject.healthInteractImpact);
             if (nearbyObject.hungerInteractImpact) this.updateHunger(nearbyObject.hungerInteractImpact);
-            if (nearbyObject.scoreInteractImpact) this.updateScore(nearbyObject.scoreInteractImpact);
+            if (nearbyObject.type == "point") this.updateScore(10);
+            else if (nearbyObject.type == "bonus") this.updateScore(50);
         }
         this.drawPerspective();
     }
@@ -245,7 +248,7 @@ class Engine {
                         if (item.showOnce) {
                             this.map[this.y][this.x] = '   ';
                         }
-                    } else if (item.type == 'item' || item.type == 'creature' || item.type == 'obstacle' || item.type == 'goal') {
+                    } else if (item.type == 'point' || item.type == 'bonus' || item.type == 'obstacle' || item.type == 'goal' || item.type == 'challenge' || item.type == 'other') {
                         let image = this.storyURL + item.image;
                         this.showImage(image, x, y);
                     } else {

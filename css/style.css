@@ -1,3 +1,22 @@
+@media only screen and (min-height: 480px) {
+    /* styles for browsers larger than 960px; */
+    body {
+      transform: scale(0.35);
+    }
+}
+@media only screen and (max-height: 768px) {
+    /* styles for mobile browsers smaller than 480px; (iPhone) */
+    body {
+      transform: scale(0.5);
+    }
+}
+@media only screen and (max-height: 1024px) {
+  /* For landscape layouts only */
+  body {
+    transform: scale(1);
+  }
+}
+
 html,
 body {
     background-color: #2E2E2E;
@@ -63,7 +82,7 @@ div#health_bar {
   position: absolute; 
   width: 860px; 
   left: 140px; 
-  top: 75px;
+  top: 115px;
   font-size: 20px;
   font-weight: bold;
 }
@@ -75,7 +94,7 @@ div#hunger_bar {
   position: absolute; 
   width: 860px; 
   left: 140px; 
-  top: 125px;
+  top: 165px;
   font-size: 20px;
   font-weight: bold;
 }
@@ -85,10 +104,11 @@ div#hunger_bar {
   z-index: 100; 
   position: absolute; 
   left: 20px; 
-  top: 50px;
+  top: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -96,4 +116,24 @@ div#hunger_bar {
   color: #fff;
   font-size: 20px;
   font-weight: bold;
+}
+
+
+.star-container {
+  z-index: 100; 
+  position: absolute; 
+  left: 440px; 
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 140px;
+  height: 140px;
+  background-color: transparent;
+}
+
+.star {
+  width: 100px;
+  height: 100px;
 }

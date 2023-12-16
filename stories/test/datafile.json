@@ -16,8 +16,8 @@
     "attackImage": "interact.png",
     "gameMaps": [[
         "###OOO######OOO###OOO###OOO",
-        "###   OOO    -          ###",
-        "OOO 1 ###   OOO###OOO   OOO",
+        "###   OOO    o          ###",
+        "OOO 1 ###   OOO###OOO o OOO",
         "###   OOO   ###         ###",
         "OOO   ###   OOO   OOO###OOO",
         "###         ###   ### z ###",
@@ -31,22 +31,17 @@
         "###": {
             "type": "obstacle",
             "name": "Tree",
-            "image": "tree.png",
-            "sound": null,
-            "opaque": true
+            "image": "tree.png"
         },
         "OOO": {
             "type": "obstacle",
             "name": "Rock Wall",
-            "image": "rock.png",
-            "sound": null,
-            "opaque": true
+            "image": "rock.png"
         },
         " o ": {
-            "type": "item",
+            "type": "point",
             "name": "Stone",
-            "image": "stone.png",
-            "opaque": true
+            "image": "stone.png"
         },
         " 1 ": {
             "type": "waypoint",
@@ -61,17 +56,15 @@
             "showOnce": true
         },
         " s ": {
-            "type": "creature",
+            "type": "challenge",
             "name": "Snake",
-            "image": "snake.png",
-            "opaque": true
+            "image": "snake.png"
         },
         " z ": {
             "type": "goal",
             "name": "Diamond",
             "image": "floating-diamond.png",
-            "sound": "level-complete.mp3",
-            "opaque": true
+            "sound": "level-complete.mp3"
         }
     }
     

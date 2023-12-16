@@ -22,7 +22,20 @@
         "###         ### b ### g ###",
         "######   ######   ###   ###",
         "###    j ### j    ###   ###",
-        "###   ######### s ###   ###",
+        "###   #########   ###   ###",
+        "### j     b     x     j ###",
+        "###########################"
+    ],
+    [
+        "###########################",
+        "### 1 ### j     b       ###",
+        "###   ###   ######### j ###",
+        "###   ###   ###         ###",
+        "### j ### j ###   #########",
+        "###         ### b ### g ###",
+        "######   ######   ###   ###",
+        "###    j ### j    ###   ###",
+        "###   #########   ###   ###",
         "### j     b           j ###",
         "###########################"
     ]],
@@ -30,38 +43,32 @@
         "###": {
             "type": "obstacle",
             "name": "Cattails",
-            "image": "cattails.png",
-            "sound": null,
-            "opaque": true
+            "image": "cattails.png"
         },
         " j ": {
-            "type": "item",
+            "type": "point",
             "name": "Jeremy Bug",
             "image": "jeremy-bug.png",
             "healthInteractImpact": 5,
-            "hungerInteractImpact": 10,
-            "scoreInteractImpact": 10,
-            "opaque": true
+            "hungerInteractImpact": 10
         },
         " b ": {
-            "type": "creature",
+            "type": "challenge",
             "name": "Bee",
             "image": "bee.png",
             "sound": "ella-buzz.mp3",
             "healthInteractImpact": -15,
             "hungerInteractImpact": 0,
-            "interactSound": "mom-ahhh.mp3",
-            "opaque": true
+            "interactSound": "mom-ahhh.mp3"
         },
-        " s ": {
-            "type": "creature",
-            "name": "Snake",
-            "image": "snake.png",
-            "sound": "mara-hsss.mp3",
+        " x ": {
+            "type": "challenge",
+            "name": "Goo-gay",
+            "image": "goo-gay.png",
+            "sound": "mara-goose.mp3",
             "healthInteractImpact": -30,
             "hungerInteractImpact": 0,
-            "interactSound": "mom-ahhh.mp3",
-            "opaque": true
+            "interactSound": "mom-ahhh.mp3"
         },
         " 1 ": {
             "type": "waypoint",
@@ -73,8 +80,7 @@
             "type": "goal",
             "name": "Home",
             "image": "home.png",
-            "sound": "yay.mp3",
-            "opaque": true
+            "sound": "yay.mp3"
         }
     }
 }

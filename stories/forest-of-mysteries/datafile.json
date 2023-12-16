@@ -1,0 +1,61 @@
+{
+    "title": "Forest of Mysteries",
+    "description": "A lightfury has crash landed in a forest and you are trying to help her find her way back home.",
+    "coverArt": "cover-art.png",
+    "author": "Ella Anne",
+    "backgroundImage": "background.png",
+    "startingPosition": [6, 1],
+    "startingDirection": "east",
+    "moveSound": "hop.mp3",
+    "moveBlockedSound": "pow.mp3",
+    "moveBlockedMessage": "pow.png",
+    "moveHealthImpact": 0,
+    "moveHungerImpact": -1,
+    "interactSound": "pickup_item.mp3",
+    "interactImage": "tongue.png",
+    "gameMaps": [[
+        "#######################################",
+        "#########       m ### g       #########",
+        "#########   ###############   #########",
+        "#########   ###         ###   #########",
+        "#########   ###   ###   ###   #########",
+        "#########    m    ### g       #########",
+        "###         ###   #########       h ###",
+        "#########   ###         ###############",
+        "#########   ######### g    ############",
+        "#########   ###   ######   ############",
+        "######### m                ############",
+        "#######################################"
+    ]],
+    "gameItems": {
+        "###": {
+            "type": "obstacle",
+            "name": "Trees",
+            "image": "trees.png"
+        },
+        " m ": {
+            "type": "point",
+            "name": "Meat",
+            "image": "meat.png",
+            "healthInteractImpact": 5,
+            "hungerInteractImpact": 10
+        },
+        " g ": {
+            "type": "bonus",
+            "name": "Gem",
+            "image": "diamond.png"
+        },
+        " 1 ": {
+            "type": "waypoint",
+            "title": "Lost!",
+            "html": "Your lightfurry has crash landed into a dark forest.  Help her find her way home and grab meat and gems along the way!",
+            "showOnce": true
+        },
+        " h ": {
+            "type": "goal",
+            "name": "Home",
+            "image": "cover-art.png",
+            "sound": "yay.mp3"
+        }
+    }
+}
