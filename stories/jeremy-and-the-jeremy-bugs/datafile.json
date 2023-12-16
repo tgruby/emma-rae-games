@@ -31,7 +31,7 @@
         "### 2     j     b ###   ###",
         "###   ###   ######### j ###",
         "###   ###   ###         ###",
-        "### j ### j ###   #########",
+        "### j ### f ###   #########",
         "###   ###       b ###   ###",
         "###############         ###",
         "###    j     j    ###   ###",
@@ -74,6 +74,15 @@
             "healthInteractImpact": -30,
             "hungerInteractImpact": 0,
             "interactSound": "mom-ahhh.mp3"
+        },
+        " f ": {
+            "type": "painful",
+            "name": "fart-cloud",
+            "image": "fart-cloud.png",
+            "sound": "fart-cloud.mp3",
+            "healthInteractImpact": -30,
+            "hungerInteractImpact": 0,
+            "interactSound": "fart-yuck.mp3"
         },
         " 1 ": {
             "type": "waypoint",

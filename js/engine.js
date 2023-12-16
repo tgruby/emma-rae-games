@@ -76,6 +76,9 @@ class Engine {
             this.y = nextPosition.y;
             let sound = new Audio(this.storyURL + this.story.moveSound);
             if (nearbyObject !== undefined && nearbyObject.sound !== undefined) sound = new Audio(this.storyURL + nearbyObject.sound);
+            if (nearbyObject !== undefined && nearbyObject.type !== 'painful') {
+                if (nearbyObject.healthInteractImpact) this.updateHealth(nearbyObject.healthInteractImpact);
+            }
             if (nearbyObject !== undefined && nearbyObject.type == "goal") {
                 this.nextLevel();
             }
@@ -238,7 +241,7 @@ class Engine {
                 if (item) {
                     if (item.type == 'waypoint' && DISTANCE[y] == 'near' && PERSPECTIVE[x] == 'center') {
                         this.showWaypoint(item);
-                    } else if (item.type == 'point' || item.type == 'bonus' || item.type == 'obstacle' || item.type == 'goal' || item.type == 'challenge' || item.type == 'other') {
+                    } else if (item.type == 'point' || item.type == 'bonus' || item.type == 'obstacle' || item.type == 'goal' || item.type == 'challenge' || item.type == 'painful' || item.type == 'other') {
                         let image = this.storyURL + item.image;
                         this.showImage(image, x, y);
                     } else {
