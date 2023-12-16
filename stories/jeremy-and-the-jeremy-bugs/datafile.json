@@ -15,8 +15,8 @@
     "interactImage": "tongue.png",
     "gameMaps": [[
         "###########################",
-        "### 1 ### j     b       ###",
-        "###   ###   ######### j ###",
+        "###   ### j     b       ###",
+        "### 1 ###   ######### j ###",
         "###   ###   ###         ###",
         "### j ### j ###   #########",
         "###         ### b ### g ###",
@@ -28,8 +28,8 @@
     ],
     [
         "###########################",
-        "### 1 ### j     b       ###",
-        "###   ###   ######### j ###",
+        "###   ### j     b       ###",
+        "### 2 ###   ######### j ###",
         "###   ###   ###         ###",
         "### j ### j ###   #########",
         "###         ### b ### g ###",
@@ -74,6 +74,12 @@
             "type": "waypoint",
             "title": "Jeremy's Lost!",
             "html": "Jeremy is lost and hungry.  Help Jeremy find his way home and eat tasty jeremy bugs along the way!  Use 'w', 'a', and 'd' to move and when close to a bug, press 'space' to eat them!",
+            "showOnce": true
+        },
+        " 2 ": {
+            "type": "waypoint",
+            "title": "Jeremy's Lost... Again!",
+            "html": "<b>Jeremy is lost and hungry.</b>  Help Jeremy find his way home and eat tasty jeremy bugs along the way!",
             "showOnce": true
         },
         " g ": {

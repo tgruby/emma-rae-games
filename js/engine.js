@@ -30,9 +30,11 @@ class Engine {
             health: 75,
             hunger: 25,
             score: 0,
-            stars: 0
+            stars: 0,
+            level: 0
         };
-        this.map = this.parseMap(datafile.gameMaps, 0);
+        this.datafile = datafile;
+        this.map = this.parseMap(datafile.gameMaps, this.player.level);
 
         this.y = datafile.startingPosition[0] + 2; // we are adding a buffer around the map.
         this.x = datafile.startingPosition[1] + 1; // we are adding a buffer around the map.
@@ -75,11 +77,7 @@ class Engine {
             let sound = new Audio(this.storyURL + this.story.moveSound);
             if (nearbyObject !== undefined && nearbyObject.sound !== undefined) sound = new Audio(this.storyURL + nearbyObject.sound);
             if (nearbyObject !== undefined && nearbyObject.type == "goal") {
-                this.updateScore(100);
-                startConfetti();
-                setTimeout(function() {
-                    stopConfetti();
-                }, 4000);
+                this.nextLevel();
             }
             this.updateHealth(this.story.moveHealthImpact);
             this.updateHunger(this.story.moveHungerImpact);
@@ -239,15 +237,7 @@ class Engine {
                 let item = this.story.gameItems[itemPositions[y][x]];
                 if (item) {
                     if (item.type == 'waypoint' && DISTANCE[y] == 'near' && PERSPECTIVE[x] == 'center') {
-                        document.getElementById('waypoint_title').innerHTML = item.title;
-                        document.getElementById('waypoint_body').innerHTML = item.html;
-                        // play sound. enable space press to get rid of screen
-                        let sound = new Audio('sounds/beep.mp3');
-                        sound.play();
-                        $('#waypoint_panel').modal('show');
-                        if (item.showOnce) {
-                            this.map[this.y][this.x] = '   ';
-                        }
+                        this.showWaypoint(item);
                     } else if (item.type == 'point' || item.type == 'bonus' || item.type == 'obstacle' || item.type == 'goal' || item.type == 'challenge' || item.type == 'other') {
                         let image = this.storyURL + item.image;
                         this.showImage(image, x, y);
@@ -258,6 +248,18 @@ class Engine {
                     this.showImage('img/blank.svg', x, y);
                 }
             }
+        }
+    }
+
+    showWaypoint(item) {
+        document.getElementById('waypoint_title').innerHTML = item.title;
+        document.getElementById('waypoint_body').innerHTML = item.html;
+        // play sound. enable space press to get rid of screen
+        let sound = new Audio('sounds/beep.mp3');
+        sound.play();
+        $('#waypoint_panel').modal('show');
+        if (item.showOnce) {
+            this.map[this.y][this.x] = '   ';
         }
     }
 
@@ -279,6 +281,25 @@ class Engine {
             console.log("Flasing Image back to blank");
             imgPosition.src = "img/blank.svg";
         }, timing);
+    }
+
+    // method to transition to the next level
+    nextLevel() {
+        this.updateScore(100);
+        startConfetti();
+        setTimeout(function() {
+            stopConfetti();
+        }, 4000);
+        this.player.level++;
+        this.map = this.parseMap(this.story.gameMaps, this.player.level);
+        this.y = this.datafile.startingPosition[0] + 2; // we are adding a buffer around the map.
+        this.x = this.datafile.startingPosition[1] + 1; // we are adding a buffer around the map.
+        console.log("Starting Direction: " + this.story.startingDirection)
+        console.log("Starting X: " + this.x)
+        console.log("Starting Y: " + this.y)
+        this.direction = DIRECTION[this.story.startingDirection];
+        console.log("Starting Direction: " + this.direction)
+        this.drawPerspective();
     }
 
 }
