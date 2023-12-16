@@ -291,15 +291,25 @@ class Engine {
             stopConfetti();
         }, 4000);
         this.player.level++;
-        this.map = this.parseMap(this.story.gameMaps, this.player.level);
-        this.y = this.datafile.startingPosition[0] + 2; // we are adding a buffer around the map.
-        this.x = this.datafile.startingPosition[1] + 1; // we are adding a buffer around the map.
-        console.log("Starting Direction: " + this.story.startingDirection)
-        console.log("Starting X: " + this.x)
-        console.log("Starting Y: " + this.y)
-        this.direction = DIRECTION[this.story.startingDirection];
-        console.log("Starting Direction: " + this.direction)
-        this.drawPerspective();
+        if (this.story.gameMaps.length > this.player.level) {
+            this.map = this.parseMap(this.story.gameMaps, this.player.level);
+            this.y = this.datafile.startingPosition[0] + 2; // we are adding a buffer around the map.
+            this.x = this.datafile.startingPosition[1] + 1; // we are adding a buffer around the map.
+            console.log("Starting Direction: " + this.story.startingDirection)
+            console.log("Starting X: " + this.x)
+            console.log("Starting Y: " + this.y)
+            this.direction = DIRECTION[this.story.startingDirection];
+            console.log("Starting Direction: " + this.direction)
+            this.drawPerspective();
+        } else {
+            // Show a message that the game is over.
+            document.getElementById('waypoint_title').innerHTML = 'Winner!!!';
+            document.getElementById('waypoint_body').innerHTML = 'You have completed the game.  Congratulations!';
+            // play sound. enable space press to get rid of screen
+            let sound = new Audio('sounds/beep.mp3');
+            sound.play();
+            $('#waypoint_panel').modal('show');
+        }
     }
 
 }

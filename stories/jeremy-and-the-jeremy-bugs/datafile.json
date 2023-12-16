@@ -28,15 +28,15 @@
     ],
     [
         "###########################",
-        "###   ### j     b       ###",
-        "### 2 ###   ######### j ###",
+        "### 2     j     b ###   ###",
+        "###   ###   ######### j ###",
         "###   ###   ###         ###",
         "### j ### j ###   #########",
-        "###         ### b ### g ###",
-        "######   ######   ###   ###",
-        "###    j ### j    ###   ###",
-        "###   #########   ###   ###",
-        "### j     b           j ###",
+        "###   ###       b ###   ###",
+        "###############         ###",
+        "###    j     j    ###   ###",
+        "###   ###############   ###",
+        "### j     b           g ###",
         "###########################"
     ]],
     "gameItems": {
@@ -44,6 +44,11 @@
             "type": "obstacle",
             "name": "Cattails",
             "image": "cattails.png"
+        },
+        "+++": {
+            "type": "obstacle",
+            "name": "tree",
+            "image": "trees.png"
         },
         " j ": {
             "type": "point",
@@ -63,8 +68,8 @@
         },
         " x ": {
             "type": "challenge",
-            "name": "Goo-gay",
-            "image": "goo-gay.png",
+            "name": "bee",
+            "image": "bee.png",
             "sound": "mara-goose.mp3",
             "healthInteractImpact": -30,
             "hungerInteractImpact": 0,
