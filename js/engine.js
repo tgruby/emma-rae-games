@@ -33,7 +33,6 @@ class Engine {
             stars: 0,
             level: 0
         };
-        this.datafile = datafile;
         this.map = this.parseMap(datafile.gameMaps, this.player.level);
 
         this.y = datafile.startingPosition[0] + 2; // we are adding a buffer around the map.
@@ -104,6 +103,9 @@ class Engine {
         if (this.player.health > 100) this.player.health = 100;
         if (this.player.health < 0) this.player.health = 0;
         $('#health').css('width', this.player.health + '%');
+        if (this.player.health <= 0) {
+            this.gameOver();
+        }
     }
 
     updateHunger(impact) {
@@ -296,8 +298,8 @@ class Engine {
         this.player.level++;
         if (this.story.gameMaps.length > this.player.level) {
             this.map = this.parseMap(this.story.gameMaps, this.player.level);
-            this.y = this.datafile.startingPosition[0] + 2; // we are adding a buffer around the map.
-            this.x = this.datafile.startingPosition[1] + 1; // we are adding a buffer around the map.
+            this.y = this.story.startingPosition[0] + 2; // we are adding a buffer around the map.
+            this.x = this.story.startingPosition[1] + 1; // we are adding a buffer around the map.
             console.log("Starting Direction: " + this.story.startingDirection)
             console.log("Starting X: " + this.x)
             console.log("Starting Y: " + this.y)
@@ -313,6 +315,29 @@ class Engine {
             sound.play();
             $('#waypoint_panel').modal('show');
         }
+    }
+
+    gameOver() {
+        document.getElementById('waypoint_title').innerHTML = this.story.gameOverTitle;
+        document.getElementById('waypoint_body').innerHTML = this.story.gameOverMessage + '<br/><br/>Your score was: ' + this.player.score;
+        // play sound. enable space press to get rid of screen
+        let sound = new Audio(this.storyURL + this.story.gameOverSound);
+        sound.play();
+        $('#waypoint_panel').modal('show');
+        this.player = {
+            inventory: new Array(),
+            health: 75,
+            hunger: 25,
+            score: 0,
+            stars: 0,
+            level: 0
+        };        
+        this.map = this.parseMap(datafile.gameMaps, 0);
+
+        this.y = story.startingPosition[0] + 2; // we are adding a buffer around the map.
+        this.x = story.startingPosition[1] + 1; // we are adding a buffer around the map.
+        this.direction = DIRECTION[story.startingDirection];
+        this.drawPerspective();
     }
 
 }

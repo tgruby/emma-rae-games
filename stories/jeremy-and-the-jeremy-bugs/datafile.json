@@ -13,6 +13,10 @@
     "moveHungerImpact": -1,
     "interactSound": "slurp.mp3",
     "interactImage": "tongue.png",
+    "gameOverSound": "game-over.mp3",
+    "gameOverImage": "game-over.png",
+    "gameOverTitle": "Game Over",
+    "gameOverMessage": "<center><b>Oh no!</b>Jeremy is too tired to continue...<br/><img src='stories/jeremy-and-the-jeremy-bugs/tired-frog.png' height='256' width='256'/><br/><i>Press Return to start over.</i></center>",
     "gameMaps": [[
         "###########################",
         "###   ### j     b       ###",
